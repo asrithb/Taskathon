@@ -1140,9 +1140,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
@@ -1656,3 +1659,32 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+		#main article#dashboard {
+			position: fixed; /* Make it fixed position, covering the whole screen */
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%; /* Full width */
+			height: auto; /* Auto height to cover content */
+			max-height: 100vh; /* Maximum height is 100% of the viewport height */
+			margin: 0; /* Reset any margins */
+			padding: 4rem 2rem; /* Keep some padding */
+			z-index: 10; /* Ensure it's above other content */
+			overflow-y: auto; /* Allow scrolling for smaller screens/content overflow */
+			display: flex; /* Use flexbox for layout */
+			flex-direction: column; /* Stack children vertically */
+			justify-content: flex-start; /* Center content vertically */
+			align-items: center; /* Center content horizontally */
+			background: rgba(27, 31, 34, 0.95); /* Semi-transparent background */
+		}
+
+		#main article#dashboard h2 {
+			/* Align the title to the top */
+			margin-top: 0; /* Remove any top margin for the title */
+			padding-top: 1rem; /* Add a little padding at the top if needed */
+			width: 100%; /* Ensure the title extends full width */
+			text-align: center; /* Center the title */
+		}
+		
