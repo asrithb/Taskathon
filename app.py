@@ -2,7 +2,7 @@ from flask import Flask, send_from_directory
 import os
 from taipy import State
 from taipy.gui import Gui
-import taipy.gui as tgb
+import taipy.gui.builder as tgb
 
 app = Flask(__name__)
 
@@ -11,8 +11,8 @@ league_name = State(default="")
 
 # Taipy GUI setup
 with tgb.Page() as page:
-    tgb.Input(league_name, label="Enter League Name")
-    tgb.Button("Submit", on_click=lambda: print(f"League Name: {league_name.get()}"))
+    tgb.input(league_name, label="Enter League Name")
+    tgb.button("Submit", on_click=lambda: print(f"League Name: {league_name.get()}"))
 
 # Initialize the Taipy GUI on a different endpoint
 Gui(page=page).run(port=5001, path="/taipy")
