@@ -1660,31 +1660,71 @@ input, select, textarea {
 			opacity: 0;
 		}
 
+		/* Dashboard Container */
 		#main article#dashboard {
-			position: fixed; /* Make it fixed position, covering the whole screen */
+			position: fixed; /* Fixed position, covering the whole screen */
 			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
 			width: 100%; /* Full width */
-			height: auto; /* Auto height to cover content */
-			max-height: 100vh; /* Maximum height is 100% of the viewport height */
+			height: 100vh; /* Full viewport height */
 			margin: 0; /* Reset any margins */
-			padding: 4rem 2rem; /* Keep some padding */
+			padding: 0; /* Reset padding */
 			z-index: 10; /* Ensure it's above other content */
-			overflow-y: auto; /* Allow scrolling for smaller screens/content overflow */
+			overflow-y: auto; /* Allow scrolling */
 			display: flex; /* Use flexbox for layout */
 			flex-direction: column; /* Stack children vertically */
-			justify-content: flex-start; /* Center content vertically */
+			justify-content: flex-start; /* Align content to the top */
 			align-items: center; /* Center content horizontally */
 			background: rgba(27, 31, 34, 0.95); /* Semi-transparent background */
 		}
 
-		#main article#dashboard h2 {
-			/* Align the title to the top */
-			margin-top: 0; /* Remove any top margin for the title */
-			padding-top: 1rem; /* Add a little padding at the top if needed */
-			width: 100%; /* Ensure the title extends full width */
-			text-align: center; /* Center the title */
+		/* Dashboard Title */
+		#main article#dashboard h2.major {
+			width: 100%; /* Full width */
+			margin-top: 1rem; /* Add margin at the top */
+			padding: 1rem 0; /* Padding at top and bottom */
+			text-align: center; /* Center the title text */
+			border-bottom: 1px solid rgba(255, 255, 255, 0.25); /* Optional: adds a separator */
 		}
-		
+
+		/* Dashboard Content */
+		.dashboard-content {
+			display: flex; /* Use flexbox for layout */
+			justify-content: space-between; /* Space between the chart and leaderboard */
+			width: 100%; /* Full width */
+			padding: 2rem; /* Padding inside the content */
+		}
+
+		/* Chart and Leaderboard Styling */
+		.table-wrapper,
+		.leaderboard {
+			flex: 1; /* Take up equal space */
+			margin: 1rem; /* Margin around the elements */
+		}
+
+		/* Footer or Back Button at the bottom of the Dashboard */
+		.dashboard-footer {
+			width: 100%; /* Full width */
+			padding: 1rem; /* Padding inside the footer */
+			text-align: center; /* Center the content */
+			position: absolute; /* Absolute positioning within the dashboard */
+			bottom: 0; /* Align to the bottom */
+			left: 0; /* Align to the left */
+			background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the footer */
+		}
+
+		/* Responsive Styles for smaller screens */
+		@media screen and (max-width: 736px) {
+			.dashboard-content {
+				flex-direction: column; /* Stack elements vertically on small screens */
+			}
+
+			.table-wrapper,
+			.leaderboard {
+				margin: 1rem 0; /* Adjust margin for stacked layout */
+				width: 100%; /* Full width for small screens */
+			}
+		}
+

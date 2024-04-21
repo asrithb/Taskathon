@@ -67,19 +67,99 @@
 								</li><a href="#nameplayers" class="button">Back</a></li>
 								</li><a href="#chooseforfeits" class="button">Next</a></li>
 							</article>
-
+						
 						<!-- Choose Forfeits -->
 							<article id="chooseforfeits">
 								<h2 class="major">Choose a Forfeit</h2>
-								</li><a href="#selecttasks" class="button">Back</a></li>
-								</li><a href="#dashboard" class="button">Finish Making Your League</a></li>
+								
+								<!-- Custom forfeit input -->
+								<form id="forfeitForm">
+									<input type="text" name="customForfeit" id="customForfeit" placeholder="Type your custom forfeit" />
+									<input type="submit" value="Submit Forfeit" />
+								</form>
+								
+								<!-- Predefined forfeits -->
+								<div>
+									<p>Or select from predefined forfeits:</p>
+									<select id="predefinedForfeits">
+										<option value="Forfeit 1">Forfeit 1</option>
+										<option value="Forfeit 2">Forfeit 2</option>
+										<option value="Forfeit 3">Forfeit 3</option>
+										<!-- Add more options as needed -->
+									</select>
+									<input type="button" value="Choose Forfeit" onclick="choosePredefinedForfeit()" />
+								</div>
+								
+								<!-- Navigation buttons -->
+								<ul class="actions">
+									<li><a href="#selecttasks" class="button">Back</a></li>
+									<li><a href="#dashboard" class="button" onclick="generateDashboard()">Finish Making Your League</a></li>
+								</ul>
 							</article>
+
 						
 						<!-- Dashboard -->
-						<article id="dashboard">
-							<h2 class="major">Dashboard</h2>
-							</li><a href="#selecttasks" class="button">Back</a></li>
-						</article>
+							<article id="dashboard">
+								<h2 class="major">Dashboard</h2>
+								
+								<!-- Chart -->
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Points</th>
+												<th>Tasks Completed</th>
+												<th>Edit</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- Players -->
+											<tr>
+												<td>Player 1</td>
+												<td>50</td>
+												<td>5</td>
+												<td><a href="#editPlayer1">Edit</a></td>
+											</tr>
+											<tr>
+												<td>Player 2</td>
+												<td>30</td>
+												<td>3</td>
+												<td><a href="#editPlayer2">Edit</a></td>
+											</tr>
+											<tr>
+												<td>Player 3</td>
+												<td>20</td>
+												<td>2</td>
+												<td><a href="#editPlayer3">Edit</a></td>
+											</tr>
+											<tr>
+												<td>Player 4</td>
+												<td>40</td>
+												<td>4</td>
+												<td><a href="#editPlayer4">Edit</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- Leaderboard -->
+								<div class="leaderboard">
+									<h3>Leaderboard</h3>
+									<ol>
+										<li>Player 4 - 40 Points</li>
+										<li>Player 1 - 50 Points</li>
+										<li>Player 2 - 30 Points</li>
+										<li>Player 3 - 20 Points</li>
+									</ol>
+								</div>
+
+								<!-- Dashboard Footer -->
+								<div class="dashboard-footer">
+									<a href="index.html" class="button primary">Home</a>
+									<a href="#editTasks" class="button">Edit Tasks</a>
+								</div>
+							</article>
 
 						<!-- Current League -->
 							<article id="currentleague">
