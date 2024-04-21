@@ -1677,7 +1677,7 @@ input, select, textarea {
 			flex-direction: row; /* Arrange children horizontally */
 			justify-content: flex-start; /* Align content to the left */
 			align-items: flex-start; /* Align content to the top */
-			background: rgba(27, 31, 34, 0.95); /* Semi-transparent background */
+			background: rgba(0, 0, 0, 0.95); /* Semi-transparent background */
 		}
 
 		/* Dashboard Title */
