@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>Taskathon</title>
@@ -31,7 +27,7 @@
 						<nav>
 							<ul>
 								<li><a href="#newleague">New League</a></li>
-								<li><a href="#currentleague">Current League</a></li>
+								<li><a href="#myleague">My Leagues</a></li>
 								<li><a href="#about">About</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
@@ -80,7 +76,7 @@
 								
 								<!-- Predefined forfeits -->
 								<div>
-									<p>Or select from predefined forfeits:</p>
+									<p>Or select from existing forfeits:</p>
 									<select id="predefinedForfeits">
 										<option value="Forfeit 1">Forfeit 1</option>
 										<option value="Forfeit 2">Forfeit 2</option>
@@ -97,61 +93,81 @@
 								</ul>
 							</article>
 
-						
+						<!-- Edit Tasks -->
+							<article id="editTasks">
+								<h2 class="major">Edit Your Tasks</h2>
+								</li><a href="#dashboard" class="button">Back</a></li>
+								</li><a href="#dashboard" class="button">Save</a></li>
+							</article>
+
 						<!-- Dashboard -->
 							<article id="dashboard">
 								<h2 class="major">Dashboard</h2>
 								
-								<!-- Chart -->
-								<div class="table-wrapper">
-									<table>
-										<thead>
-											<tr>
-												<th>Name</th>
-												<th>Points</th>
-												<th>Tasks Completed</th>
-												<th>Edit</th>
-											</tr>
-										</thead>
-										<tbody>
-											<!-- Players -->
-											<tr>
-												<td>Player 1</td>
-												<td>50</td>
-												<td>5</td>
-												<td><a href="#editPlayer1">Edit</a></td>
-											</tr>
-											<tr>
-												<td>Player 2</td>
-												<td>30</td>
-												<td>3</td>
-												<td><a href="#editPlayer2">Edit</a></td>
-											</tr>
-											<tr>
-												<td>Player 3</td>
-												<td>20</td>
-												<td>2</td>
-												<td><a href="#editPlayer3">Edit</a></td>
-											</tr>
-											<tr>
-												<td>Player 4</td>
-												<td>40</td>
-												<td>4</td>
-												<td><a href="#editPlayer4">Edit</a></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
+								<!-- Dashboard Content -->
+								<div class="dashboard-content">
+									
+									<!-- Left Side (Leaderboard and Forfeits) -->
+									<div class="left-side">
+									
+										<!-- Leaderboard -->
+										<div class="leaderboard">
+											<h3>Leaderboard</h3>
+											<ol>
+												<li>Player 4 - 40 Points</li>
+												<li>Player 1 - 50 Points</li>
+												<li>Player 2 - 30 Points</li>
+												<li>Player 3 - 20 Points</li>
+											</ol>
+										</div>
 
-								<!-- Leaderboard -->
-								<div class="leaderboard">
-									<h3>Leaderboard</h3>
-									<ol>
-										<li>Player 4 - 40 Points</li>
-										<li>Player 1 - 50 Points</li>
-										<li>Player 2 - 30 Points</li>
-										<li>Player 3 - 20 Points</li>
-									</ol>
+										<!-- Forfeit Section Below Leaderboard -->
+										<div class="forfeits">
+											<!-- Forfeit content goes here -->
+										</div>
+									
+									</div>
+
+									<!-- Right Side (Chart) -->
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Points</th>
+													<th>Tasks Completed</th>
+													<th>Edit</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Player 1</td>
+													<td>50</td>
+													<td>5</td>
+													<td><a href="#editPlayer1">Edit</a></td>
+												</tr>
+												<tr>
+													<td>Player 2</td>
+													<td>30</td>
+													<td>3</td>
+													<td><a href="#editPlayer2">Edit</a></td>
+												</tr>
+												<tr>
+													<td>Player 3</td>
+													<td>20</td>
+													<td>2</td>
+													<td><a href="#editPlayer3">Edit</a></td>
+												</tr>
+												<tr>
+													<td>Player 4</td>
+													<td>40</td>
+													<td>4</td>
+													<td><a href="#editPlayer4">Edit</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
 								</div>
 
 								<!-- Dashboard Footer -->
@@ -161,19 +177,34 @@
 								</div>
 							</article>
 
-						<!-- Current League -->
-							<article id="currentleague">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+
+						<!-- My Leagues -->
+							<article id="myleague">
+								<h2 class="major">My Leagues</h2>
+							
+								<!-- League Selection Form -->
+								<form id="leagueForm">
+									<div class="select-wrapper">
+										<select id="leagueSelect">
+											<option value="">-- Select a League --</option>
+											<option value="dashboard1.html">League 1</option>
+											<option value="dashboard2.html">League 2</option>
+											<option value="dashboard3.html">League 3</option>
+											<!-- Add more options as needed -->
+										</select>
+									</div>
+									<!-- Navigation buttons -->
+									<ul class="actions">
+										<li><a href="index.html" class="button">Back to Home</a></li>
+										<li><a href="#dashboard" class="button" onclick="generateDashboard()">Go to Dashboard</a></li>
+									</ul>
+								</form>
 							</article>
 
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<p>Made by Asrith, Sidd, Srikar, Ayush.</p>
 							</article>
 
 						<!-- Elements -->

@@ -1674,57 +1674,78 @@ input, select, textarea {
 			z-index: 10; /* Ensure it's above other content */
 			overflow-y: auto; /* Allow scrolling */
 			display: flex; /* Use flexbox for layout */
-			flex-direction: column; /* Stack children vertically */
-			justify-content: flex-start; /* Align content to the top */
-			align-items: center; /* Center content horizontally */
+			flex-direction: row; /* Arrange children horizontally */
+			justify-content: flex-start; /* Align content to the left */
+			align-items: flex-start; /* Align content to the top */
 			background: rgba(27, 31, 34, 0.95); /* Semi-transparent background */
 		}
 
 		/* Dashboard Title */
 		#main article#dashboard h2.major {
 			width: 100%; /* Full width */
-			margin-top: 1rem; /* Add margin at the top */
 			padding: 1rem 0; /* Padding at top and bottom */
 			text-align: center; /* Center the title text */
 			border-bottom: 1px solid rgba(255, 255, 255, 0.25); /* Optional: adds a separator */
+			position: fixed; /* Fix the title at the top */
 		}
 
 		/* Dashboard Content */
 		.dashboard-content {
-			display: flex; /* Use flexbox for layout */
-			justify-content: space-between; /* Space between the chart and leaderboard */
+			display: flex; /* Keep using flexbox */
+			justify-content: space-around; /* Adjust spacing as needed */
+			align-items: flex-start; /* Align items to the top */
+			padding-top: 3rem; /* Add padding to top to avoid overlap with the fixed title */
 			width: 100%; /* Full width */
-			padding: 2rem; /* Padding inside the content */
+			margin-top: 4rem; /* Add margin at the top */
+			height: calc(100vh - 4rem); /* Adjust height considering the fixed title */
+			box-sizing: border-box; /* Include padding and border in the element's total width and height */
 		}
 
-		/* Chart and Leaderboard Styling */
-		.table-wrapper,
-		.leaderboard {
-			flex: 1; /* Take up equal space */
-			margin: 1rem; /* Margin around the elements */
+		/* Leaderboard and Forfeits column styling */
+		.left-side {
+			display: flex; /* Use flexbox for layout */
+			flex-direction: column; /* Stack children vertically */
+			width: 30%; /* Left side takes up 30% of the space */
+			min-width: 250px; /* Minimum width before wrapping */
+			height: 100%; /* Full height */
 		}
 
-		/* Footer or Back Button at the bottom of the Dashboard */
+		/* Chart styling */
+		.chart {
+			flex-grow: 1; /* Chart grows to take remaining space */
+			width: 70%; /* Chart takes up 70% of the space */
+			min-width: 250px; /* Minimum width before wrapping */
+			height: 100%; /* Full height */
+			overflow-y: auto; /* Allow scrolling for chart content */
+		}
+
+		/* Dashboard Footer */
 		.dashboard-footer {
 			width: 100%; /* Full width */
 			padding: 1rem; /* Padding inside the footer */
-			text-align: center; /* Center the content */
-			position: absolute; /* Absolute positioning within the dashboard */
-			bottom: 0; /* Align to the bottom */
-			left: 0; /* Align to the left */
+			text-align: center; /* Center content */
+			position: fixed; /* Absolute positioning within dashboard */
+			bottom: 0; /* Align to bottom */
+			left: 0; /* Align to left */
 			background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the footer */
 		}
 
-		/* Responsive Styles for smaller screens */
+		/* Responsive Styles */
 		@media screen and (max-width: 736px) {
-			.dashboard-content {
-				flex-direction: column; /* Stack elements vertically on small screens */
+			.left-side {
+				width: 100%; /* Full width on smaller screens */
+				min-width: 100%; /* Full width on smaller screens */
+			}
+			
+			.chart {
+				width: 100%; /* Full width on smaller screens */
+				min-width: 100%; /* Full width on smaller screens */
+				order: 3; /* Move chart below the leaderboard and forfeits */
 			}
 
-			.table-wrapper,
-			.leaderboard {
-				margin: 1rem 0; /* Adjust margin for stacked layout */
-				width: 100%; /* Full width for small screens */
+			.dashboard-content {
+				flex-direction: column; /* Stack elements vertically */
 			}
 		}
+
 
